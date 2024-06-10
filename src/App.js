@@ -1,18 +1,28 @@
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import frame from './frame';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+
+<header className="App-header">
         
         <a
           
         >
-          Hello World v2
+         Podróże kulinarne bla bla bla
         </a>
       </header>
+
+        <frame title="Mój Tytuł" />
+        <main>
+            <p>Treść strony</p>
+        </main>
     </div>
-  );
-}
+);
+};
 
 export default App;
