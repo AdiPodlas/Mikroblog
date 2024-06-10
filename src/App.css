@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  background-color: #0c0f11;
+}
+
+.App-header {
+  background: linear-gradient(45deg, #041eb5, #3d9ab6);
+  min-height: 20vh;  /*  wysokość boxa, poniżej line height da nam teks po środku */
+  line-height: 20vh;
+  color: #0e0303;
+  padding: 10px 20px;
+  text-align: left;
+  box-shadow: 10px 8px 8px -8px #ec0a0a;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  font-style: italic;
+  border-radius: 20px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  justify-content: center;
+}
+
+
+
+.content {
+  background: linear-gradient(rgb(99, 168, 213), rgb(157, 165, 184), rgb(207, 207, 213));
+  padding: 20px;
+  min-height: 500px;
+  width: 70%;
+  display: flex;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  justify-content: center;
+}
+/*.content:hover {
+  transform: scale(1.02); /* Powiększenie po najechaniu * /
+} */
+
+.first {
+  
+    background: linear-gradient(45deg, #041eb5, #3d9ab6);
+    min-height: 20vh;
+    align-items: left;
+    justify-content: left;
+    font-size: calc(10px + 4vmin);
+    color: #de0a0a;
+    padding: 10px 20px;
+    text-align: left;
+    box-shadow: 10px 8px 8px -8px #ec0a0a;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    font-style: italic;
+    border-radius: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+
+}
+
+
