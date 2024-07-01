@@ -7,19 +7,15 @@ import {BlogEntry} from './BlogEntry'
 function App() {
   return (
     <div>
-    <div className="app-header">
-      Podróże kulinarne
-          {/* <br/> string od nowej linijki */}
-      
+      <div className="app-header">
+        Podróże kulinarne
+      </div>
+      <div className="content">
+        
+        <BlogEntry/>
+      </div>
     </div>
-    <div className="content">
-      Treść tutaj
-      <BlogEntry>
-
-      </BlogEntry>
-    </div>
-  </div>
-);
-};
+  );
+}
 
 export default App;

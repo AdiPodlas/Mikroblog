@@ -4,11 +4,27 @@ import './BlogEntry.css';
 
 export const BlogEntry = ({ title }) => {
     return (
-        <header className="blog-entry">
-            <h1>{title}
-                xyz
-            </h1>
-        </header>
+        <div className="blog-entry">
+            <h1>{title}</h1>
+            <div className="content">
+                <div className="image-container">
+                    <img
+                        src="https://static-00.iconduck.com/assets.00/a-letter-icon-2048x2048-ivt882vt.png"
+                        alt="icon"
+                    />
+                    <p className="image-caption">Adrian</p>
+                </div>
+                <div className="text-container">
+                    <p className="text-content">
+                        Sed non rerum voluptas. Voluptate expedita culpa laboriosam sit sed ipsam amet.
+                        Ut dolor id eius dolores totam sunt voluptas. Ut in praesentium suscipit maiores.
+                        Numquam consequuntur nostrum autem dolorum distinctio. Voluptates occaecati nisi
+                        dicta facere iusto ut quia veritatis.
+                    </p>
+                    <p className="date">01-07-2024</p>
+                </div>
+            </div>
+        </div>
     );
 };
 
