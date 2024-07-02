@@ -12,7 +12,7 @@ function App() {
       </div>
       <div className="content">
         
-        <BlogEntry/>
+        <BlogEntry title={"lolek"}/>
       </div>
     </div>
   );

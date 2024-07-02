@@ -6,12 +6,12 @@ export const BlogEntry = ({ title }) => {
     return (
         <div className="blog-entry">
             <h1>{title}</h1>
-            <div className="content">
+            <div className="blog-entry__content">
                 <div className="image-container">
-                    <img
-                        src="https://static-00.iconduck.com/assets.00/a-letter-icon-2048x2048-ivt882vt.png"
-                        alt="icon"
-                    />
+                   
+                    <div className='avatar'>
+                        A
+                    </div>
                     <p className="image-caption">Adrian</p>
                 </div>
                 <div className="text-container">

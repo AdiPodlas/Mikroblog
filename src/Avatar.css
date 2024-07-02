@@ -1,0 +1,15 @@
+.avatar{
+    font-size: 3rem;
+    font-weight: bold;
+    background: #3A94FD;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 3.5rem; */
+    font-family: sans-serif;
+}
