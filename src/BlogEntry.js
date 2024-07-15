@@ -1,6 +1,6 @@
 import React from 'react';
 import './BlogEntry.css';
-
+import { Avatar } from './Avatar';
 
 export const BlogEntry = ({ title }) => {
     return (
@@ -8,11 +8,7 @@ export const BlogEntry = ({ title }) => {
             <h1>{title}</h1>
             <div className="blog-entry__content">
                 <div className="image-container">
-                   
-                    <div className='avatar'>
-                        A
-                    </div>
-                    <p className="image-caption">Adrian</p>
+                    <Avatar name="Martyna" />
                 </div>
                 <div className="text-container">
                     <p className="text-content">
@@ -27,4 +23,3 @@ export const BlogEntry = ({ title }) => {
         </div>
     );
 };
-
