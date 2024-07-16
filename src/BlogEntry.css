@@ -6,7 +6,6 @@
     max-height: 200px;
     border: 1px solid #C5C5C5;
     border-radius: 20px;
-    overflow: auto;
     padding: 1rem;
     gap: 1rem;  /* przerwy pomiędzy elementami w jednym divie można używać tylko przy display flex */
       
@@ -22,6 +21,7 @@
 
 .text-content{
 margin: 0;
+overflow: auto;
 
 
 }

@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {BlogEntry} from './BlogEntry'
+import { getEntries } from './EntryRepository';
 
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
       </div>
       <div className="content">
         
-        <BlogEntry title={"lolek"}/>
+        {
+          getEntries().map(entry => <BlogEntry entry = {entry}/>)
+        }
       </div>
     </div>
   );
