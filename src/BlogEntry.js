@@ -7,7 +7,7 @@ export const BlogEntry = ({ title }) => {
         <div className="blog-entry">
             <h1>{title}</h1>
             <div className="blog-entry__content">
-                <div className="image-container">
+                <div className="blog-entry__avatar-container">
                     <Avatar name="Martyna" />
                 </div>
                 <div className="text-container">
@@ -17,7 +17,7 @@ export const BlogEntry = ({ title }) => {
                         Numquam consequuntur nostrum autem dolorum distinctio. Voluptates occaecati nisi
                         dicta facere iusto ut quia veritatis.
                     </p>
-                    <p className="date">01-07-2024</p>
+                    <div className="date">01-07-2024 </div> 
                 </div>
             </div>
         </div>
