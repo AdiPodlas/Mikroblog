@@ -1,9 +1,8 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {BlogEntry} from './BlogEntry'
+import { BlogEntry } from './BlogEntry';
 import { getEntries } from './EntryRepository';
-
 
 function App() {
   return (
@@ -12,9 +11,14 @@ function App() {
         Podróże kulinarne
       </div>
       <div className="content">
-        
         {
-          getEntries().map(entry => <BlogEntry entry = {entry}/>)
+          getEntries().map(entry => (
+            <BlogEntry 
+              key={entry.id}  // Dodaj klucz, aby uniknąć ostrzeżeń React
+              title={entry.title} 
+              entry={entry} 
+            />
+          ))
         }
       </div>
     </div>

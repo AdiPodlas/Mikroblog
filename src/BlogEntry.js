@@ -1,6 +1,7 @@
 import React from 'react';
 import './BlogEntry.css';
 import { Avatar } from './Avatar';
+import { Likes } from './Likes';
 
 export const BlogEntry = ({ title, entry }) => {
     return (
@@ -8,13 +9,14 @@ export const BlogEntry = ({ title, entry }) => {
             <h1>{title}</h1>
             <div className="blog-entry__content">
                 <div className="blog-entry__avatar-container">
-                    <Avatar name= {entry.author} />
+                    <Avatar name={entry.author} />
                 </div>
                 <div className="text-container">
                     <p className="text-content">
                         {entry.text}
                     </p>
-                    <div className="date"> {entry.date}</div> 
+                    <div className="date"> {entry.date} </div>
+                    <Likes count={entry.likes} />
                 </div>
             </div>
         </div>

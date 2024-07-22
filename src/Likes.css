@@ -1,0 +1,10 @@
+.likes-container {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #666;
+}
+
+.thumbs-up-icon {
+    margin-right: 5px;
+}
