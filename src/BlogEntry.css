@@ -11,6 +11,12 @@
       
 }
 
+.blog-entry__avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 
 .text-container {
     display: flex;

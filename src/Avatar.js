@@ -9,7 +9,7 @@ export const Avatar = ({ name }) => {
             <div className="avatar">
                 {initial}
             </div>
-            <p className="avatar-caption">{name}</p>
+            <span className="avatar-caption">{name}</span>
         </div>
     );
 };

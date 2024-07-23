@@ -34,6 +34,7 @@ Morbi fermentum volutpat mauris, tempus rhoncus nibh bibendum eu. Praesent ut en
 Maecenas eleifend, elit sed lobortis elementum, massa arcu elementum sapien, at maximus ipsum tellus eu quam. Nunc sed velit at mi maximus accumsan. Donec accumsan metus pulvinar dictum pellentesque. Proin vel leo id justo convallis pellentesque. Proin finibus neque sed odio fringilla, sed tristique magna scelerisque. In vel leo purus. Ut erat ex, tincidunt eu faucibus non, facilisis eu lorem. Vestibulum lacinia nunc ac placerat ullamcorper. Etiam luctus ornare aliquet. Pellentesque a pharetra felis. Nulla facilisi.`,
         date: "18-03-2024",
         likes: 66
+      
       },
   ];
 };

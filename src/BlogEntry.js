@@ -10,13 +10,14 @@ export const BlogEntry = ({ title, entry }) => {
             <div className="blog-entry__content">
                 <div className="blog-entry__avatar-container">
                     <Avatar name={entry.author} />
+                    <Likes count={entry.likes} />
                 </div>
                 <div className="text-container">
                     <p className="text-content">
                         {entry.text}
                     </p>
                     <div className="date"> {entry.date} </div>
-                    <Likes count={entry.likes} />
+                    
                 </div>
             </div>
         </div>
