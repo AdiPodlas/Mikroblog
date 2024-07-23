@@ -11,7 +11,14 @@ function App() {
         Podróże kulinarne
       </div>
       <div className="content">
-        {
+
+<div className='new-entry-form'>
+
+  <textarea/>
+
+</div>
+
+        {          
           getEntries().map(entry => (
             <BlogEntry 
               key={entry.id}  // Dodaj klucz, aby uniknąć ostrzeżeń React
