@@ -1,0 +1,32 @@
+.new-entry-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 20px 0;
+}
+
+.new-entry-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+}
+
+.add-entry-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.add-entry-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
