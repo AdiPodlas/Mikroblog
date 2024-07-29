@@ -1,35 +1,43 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { BlogEntry } from './BlogEntry';
 import { getEntries } from './EntryRepository';
+import { NewEntryForm } from './NewEntryForm';
 
 function App() {
-  return (
-    <div>
-      <div className="app-header">
-        Podróże kulinarne
-      </div>
-      <div className="content">
+    const [entries, setEntries] = useState(getEntries());
 
-<div className='new-entry-form'>
+    const handleAddEntry = (text) => {
+        const newEntry = {
+            id: entries.length + 1,
+            author: 'Anonim',
+            text: text,
+            date: new Date().toLocaleDateString(),
+            likes: 0
+        };
+        setEntries([newEntry, ...entries]);
+    };
 
-  <textarea/>
-
-</div>
-
-        {          
-          getEntries().map(entry => (
-            <BlogEntry 
-              key={entry.id}  // Dodaj klucz, aby uniknąć ostrzeżeń React
-              title={entry.title} 
-              entry={entry} 
-            />
-          ))
-        }
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <div className="app-header">
+                Podróże kulinarne
+            </div>
+            <div className="content">
+                <NewEntryForm onAddEntry={handleAddEntry} />
+                {          
+                    entries.map(entry => (
+                        <BlogEntry 
+                            key={entry.id}
+                            title={entry.title}
+                            entry={entry}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    );
 }
 
 export default App;
