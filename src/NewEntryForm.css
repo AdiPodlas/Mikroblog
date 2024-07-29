@@ -17,7 +17,7 @@
 
 .add-entry-button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #00736C ;
     color: white;
     border: none;
     border-radius: 5px;
@@ -27,6 +27,22 @@
 }
 
 .add-entry-button:hover {
-    background-color: #0056b3;
+    background-color: #08524d ;
     transform: scale(1.1);
 }
+
+.new-entry-form textarea{
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    transition:height 0.5s;  /*animacja rozciągnięcia input boxa */
+    transition:border-color 0.5s;
+    height: 2rem;
+    border-color: #c1c1c1;
+  }
+  
+  .new-entry-form textarea:focus-visible{
+  height: 5rem;
+  border-color: #0c647f;
+  outline: none;
+  }
