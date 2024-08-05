@@ -65,16 +65,12 @@
     font-size: 16px;
 }
 
-.new-entry-author-input:focus-visible{
-    height: 2rem;
-    border-color: #0c647f;
-    outline: none;
-}
+
 .add-entry-button:disabled {
     background-color: #a8a8a8;
     cursor: not-allowed;
 }
 
 .new-entry-input.focused {
-    min-height: 100px;
+    min-height: 100px; 
 }
