@@ -22,7 +22,7 @@
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    cursor: pointer;
+    cursor:pointer;
     transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
@@ -46,3 +46,35 @@
   border-color: #0c647f;
   outline: none;
   }
+
+  .new-entry-author-label {
+    width: 100%;
+    margin-bottom: 5px; 
+    font-size: 14px;
+    color: #040505;
+    text-align: left; /* Wyrównaj tekst do lewej */
+}
+
+.new-entry-author-input {
+    width: 20rem;
+    padding: 0.5rem;
+    margin-bottom: 0.4rem; /* Dodaj margines poniżej pola autora */
+    margin-left: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.new-entry-author-input:focus-visible{
+    height: 2rem;
+    border-color: #0c647f;
+    outline: none;
+}
+.add-entry-button:disabled {
+    background-color: #a8a8a8;
+    cursor: not-allowed;
+}
+
+.new-entry-input.focused {
+    min-height: 100px;
+}

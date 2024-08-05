@@ -8,10 +8,10 @@ import { NewEntryForm } from './NewEntryForm';
 function App() {
     const [entries, setEntries] = useState(getEntries());
 
-    const handleAddEntry = (text) => {
+    const handleAddEntry = (text, author) => {
         const newEntry = {
             id: entries.length + 1,
-            author: 'Anonim',
+            author: author,
             text: text,
             date: new Date().toLocaleDateString(),
             likes: 0
