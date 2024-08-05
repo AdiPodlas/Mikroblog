@@ -41,10 +41,16 @@
     border-color: #c1c1c1;
   }
   
-  .new-entry-form textarea:focus-visible{
-  height: 5rem;
+ /* .new-entry-author-input:focus-visible{
+  height: 2rem;
   border-color: #0c647f;
   outline: none;
+  } */
+
+  .new-entry-author-input.new-entry-input.focused{
+    height: 2rem;
+    border-color: #0c647f;
+    outline: none;
   }
 
   .new-entry-author-label {
@@ -63,6 +69,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    transition:height 0.5s;  /*animacja rozciągnięcia input boxa */
+    transition:border-color 0.
 }
 
 
@@ -72,5 +80,7 @@
 }
 
 .new-entry-input.focused {
-    min-height: 100px; 
+  height: 5rem;
+  border-color: #0c647f;
+  outline: none;
 }

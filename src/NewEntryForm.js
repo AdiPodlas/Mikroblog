@@ -10,8 +10,8 @@ export const NewEntryForm = ({ onAddEntry }) => {
         setText(e.target.value);
     };
 
-    const handleAuthorChange = (e) => {
-        setAuthor(e.target.value);
+    const handleAuthorChange = (f) => {
+        setAuthor(f.target.value);
     };
 
     const handleAddEntry = () => {
@@ -50,7 +50,7 @@ export const NewEntryForm = ({ onAddEntry }) => {
                     type="text"
                     value={author}
                     onChange={handleAuthorChange}
-                    className="new-entry-author-input"
+                    className={`new-entry-author-input ${isFocused || text.trim() !== '' ? 'focused' : ''}`}   /* Nie wiem czy to potrzebne od 53 do 55 */
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                 />
