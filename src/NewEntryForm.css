@@ -52,13 +52,13 @@
     margin-bottom: 5px; 
     font-size: 14px;
     color: #040505;
-    text-align: left; /* Wyrównaj tekst do lewej */
+    text-align: left; 
 }
 
 .new-entry-author-input {
     width: 20rem;
     padding: 0.5rem;
-    margin-bottom: 0.4rem; /* Dodaj margines poniżej pola autora */
+    margin-bottom: 0.4rem; 
     margin-left: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
