@@ -1,43 +1,33 @@
-import './App.css';
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { BlogEntry } from './BlogEntry';
-import { getEntries } from './EntryRepository';
-import { NewEntryForm } from './NewEntryForm';
+import "./App.css";
+import React, { useState } from "react";
+import { BlogEntry } from "./BlogEntry";
+import { NewEntryForm } from "./NewEntryForm";
+import { useEntries } from "./useEntries";
 
 function App() {
-    const [entries, setEntries] = useState(getEntries());
 
-    const handleAddEntry = (text, author) => {
-        const newEntry = {
-            id: entries.length + 1,
-            author: author,
-            text: text,
-            date: new Date().toLocaleDateString(),
-            likes: 0
-        };
-        setEntries([newEntry, ...entries]);
-    };
+    const [pageNumber, setPageNumber] = useState(0)
+  const { currentPageEntries, handleAddEntry } = useEntries(pageNumber);
 
-    return (
-        <div>
-            <div className="app-header">
-                Podróże kulinarne
-            </div>
-            <div className="content">
-                <NewEntryForm onAddEntry={handleAddEntry} />
-                {          
-                    entries.map(entry => (
-                        <BlogEntry 
-                            key={entry.id}
-                            title={entry.title}
-                            entry={entry}
-                        />
-                    ))
-                }
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <div className="app-header">Podróże kulinarne</div>
+      <div className="content">
+        <NewEntryForm onAddEntry={handleAddEntry} />
+        <button onClick = {() => setPageNumber(pageNumber-1)}>
+            prev page
+        </button>
+
+        <button onClick = {() => setPageNumber(pageNumber+1)}>
+            next page
+        </button>
+       
+        {currentPageEntries.map((entry) => (
+          <BlogEntry key={entry.id} title={entry.title} entry={entry} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App;
