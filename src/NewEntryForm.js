@@ -50,7 +50,7 @@ export const NewEntryForm = ({ onAddEntry }) => {
                     type="text"
                     value={author}
                     onChange={handleAuthorChange}
-                    className={`new-entry-author-input ${isFocused || text.trim() !== '' ? 'focused' : ''}`}   /* Nie wiem czy to potrzebne od 53 do 55 */
+                    className= "new-entry-author-input"   
                     onFocus={handleFocus}
                     onBlur={handleBlur}
                 />

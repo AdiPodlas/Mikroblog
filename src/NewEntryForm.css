@@ -6,6 +6,7 @@
 }
 
 .new-entry-input {
+    
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -41,17 +42,17 @@
     border-color: #c1c1c1;
   }
   
- /* .new-entry-author-input:focus-visible{
+ .new-entry-author-input:focus-visible{
   height: 2rem;
   border-color: #0c647f;
   outline: none;
-  } */
+  } 
 
-  .new-entry-author-input.new-entry-input.focused{
+  /*.new-entry-author-input.focused{
     height: 2rem;
     border-color: #0c647f;
     outline: none;
-  }
+  } */
 
   .new-entry-author-label {
     width: 100%;
