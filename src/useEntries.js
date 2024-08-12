@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { getEntries } from "./EntryRepository";
-export const useEntries = (pagenumber) => {
+
+export const useEntries = (pageNumber) => {
   const [entries, setEntries] = useState(getEntries());
+
+  const entriesPerPage = 5;
+  const totalPages = Math.ceil(entries.length / entriesPerPage);
 
   const handleAddEntry = (text, author) => {
     const newEntry = {
@@ -13,11 +17,14 @@ export const useEntries = (pagenumber) => {
     };
     setEntries([newEntry, ...entries]);
   };
+
   return {
-    currentPageEntries: entries.slice(pagenumber * 5, pagenumber * 5 + 5),
+    currentPageEntries: entries.slice(pageNumber * entriesPerPage, pageNumber * entriesPerPage + entriesPerPage),
     handleAddEntry,
+    totalPages
   };
 };
+
 
 
 /* pageNumber0: entries.slice(0*0, 0+5)
