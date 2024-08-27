@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './NewEntryForm.css';
 
+
+
 export const NewEntryForm = ({ onAddEntry }) => {
     const [text, setText] = useState('');
     const [author, setAuthor] = useState('');

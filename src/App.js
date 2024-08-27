@@ -1,31 +1,42 @@
 import "./App.css";
 import React, { useState } from "react";
+import MainPage from "./MainPage";
 import { BlogEntry } from "./BlogEntry";
 import { NewEntryForm } from "./NewEntryForm";
 import { useEntries } from "./useEntries";
 import { PaginationControls } from "./PaginationControls";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import AboutPage from "./AboutPage";
+
 
 function App() {
-  const [pageNumber, setPageNumber] = useState(0);
-  const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber);
-
   return (
     <div>
       <div className="app-header">Podróże kulinarne</div>
+
+      <BrowserRouter>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/"> Home </Link>
+          </li>
+          <li>
+            <Link to="/about"> O nas </Link>
+          </li>
+        </ul>
+      </nav>
+
       <div className="content">
-        <NewEntryForm onAddEntry={handleAddEntry} />
-        {currentPageEntries.map((entry) => (
-          <BlogEntry key={entry.id} title={entry.title} entry={entry} />
-        ))}
-        <PaginationControls 
-          pageNumber={pageNumber} 
-          setPageNumber={setPageNumber} 
-          totalPages={totalPages} 
-        />
+        
+          <Routes>
+            <Route index element={<MainPage />} />
+            <Route path="about" element={<AboutPage />} />
+          </Routes>
+        
       </div>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-
