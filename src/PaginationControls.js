@@ -39,15 +39,12 @@ export const PaginationControls = ({ pageNumber, setPageNumber, totalPages }) =>
       <button onClick={handlePrevPage} disabled={pageNumber === 0}>
         Prev
       </button>
-      <span className="page-info">
-        Page {pageNumber + 1} of {totalPages}
-      </span>
-      <button onClick={handleNextPage} disabled={pageNumber === totalPages - 1}>
-        Next
-      </button>
       <div className="page-numbers">
         {renderPageNumbers()}
       </div>
+      <button onClick={handleNextPage} disabled={pageNumber === totalPages - 1}>
+        Next
+      </button>
     </div>
   );
 };
