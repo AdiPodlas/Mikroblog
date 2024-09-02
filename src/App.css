@@ -52,6 +52,40 @@ body{
 
 }
 
+/* Stylizacja nawigacji */
+.navigation {
+  background-color: #f8f8f8;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Dodanie cienia */
+}
+
+.nav-links {
+  list-style-type: none; /* Usunięcie kropek z listy */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Ustawienie linków w jednym wierszu */
+  justify-content: center; /* Wycentrowanie linków */
+}
+
+.nav-links li {
+  margin: 0 20px; /* Dodanie odstępów między linkami */
+}
+
+.nav-link {
+  text-decoration: none; /* Usunięcie podkreślenia */
+  font-size: 18px; /* Ustawienie wielkości czcionki */
+  color: #333; /* Kolor tekstu */
+  padding: 8px 16px; /* Dodanie odstępów wewnętrznych */
+  border: 2px solid transparent; /* Transparentna obwódka */
+  transition: all 0.3s ease; /* Płynne przejście */
+}
+
+.nav-link:hover {
+  background-color: #00736C; /* Zmiana koloru tła po najechaniu */
+  color: #fff; /* Zmiana koloru tekstu po najechaniu */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  border-color: #162c16; /* Dodanie koloru obwódki */
+}
 
 
 
