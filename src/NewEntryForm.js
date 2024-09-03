@@ -46,16 +46,17 @@ export const NewEntryForm = ({ onAddEntry }) => {
           isFocused || text.trim() !== "" ? "focused" : ""
         }`}
       />
-      <label className="new-entry-author-label">
-        Autor:
-        <input
-          type="text"
-          value={author}
-          onChange={handleAuthorChange}
-          className="new-entry-author-input"
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-        />
+      <div className="new-entry-author-label">
+        <label>
+          Autor:
+          <input
+            type="text"
+            value={author}
+            onChange={handleAuthorChange}
+            className="new-entry-author-input"
+            
+          />
+        </label>
         <button
           onClick={handleAddEntry}
           className="add-entry-button"
@@ -63,7 +64,7 @@ export const NewEntryForm = ({ onAddEntry }) => {
         >
           Dodaj wpis
         </button>
-      </label>
+      </div>
     </div>
   );
 };
