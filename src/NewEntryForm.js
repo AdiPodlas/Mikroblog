@@ -54,7 +54,6 @@ export const NewEntryForm = ({ onAddEntry }) => {
             value={author}
             onChange={handleAuthorChange}
             className="new-entry-author-input"
-            
           />
         </label>
         <button

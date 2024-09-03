@@ -46,7 +46,6 @@
   }
   
  .new-entry-author-input:focus-visible{
- 
   border-color: #0c647f;
   outline: none;
   } 
@@ -93,3 +92,5 @@
   border-color: #0c647f;
   outline: none;
 }
+
+
