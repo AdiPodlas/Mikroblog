@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
+import "./SearchInput.css";
 
 function SearchInput() {
   const [searchTerm, setSearchTerm] = useState("");
