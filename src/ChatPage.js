@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "./ChatPage.css";
 
 function ChatPage() {
-  const [message, setMessage] = useState(""); // Stan do przechowywania wiadomości
+  const [message, setMessage] = useState(""); 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Tutaj można dodać logikę wysyłania wiadomości
+
     console.log("Wiadomość wysłana:", message);
     setMessage(""); // Wyczyść pole po wysłaniu wiadomości
   };

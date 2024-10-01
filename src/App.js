@@ -1,14 +1,16 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link} from "react-router-dom";
 import MainPage from "./MainPage";
 import AboutPage from "./AboutPage";
 import SearchPage from "./SearchPage";
-import EntryPage from "./EntryPage"; // Import nowego komponentu
+import EntryPage from "./EntryPage"; 
 import React from "react";
 import SearchInput from "./SearchInput";
 import ChatPage from "./ChatPage";
+import { ChatButton } from "./ChatButton";
 
 function App() {
+
   return (
     <div>
       <div className="app-header">
@@ -39,12 +41,11 @@ function App() {
             <Route path="chat" element={<ChatPage />} />
           </Routes>
         </div>
+          
+     <ChatButton></ChatButton>
+
       </BrowserRouter>
 
-      {/* Dodajemy okrągły przycisk czatu */}
-      <button className="chat-button">
-        <i className="chat-icon">🗨</i> {/* Ikona czatu */}
-      </button>
     </div>
   );
 }

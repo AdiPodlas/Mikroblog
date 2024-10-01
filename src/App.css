@@ -11,9 +11,9 @@ body {
   font-style: italic;
   text-shadow: 2px 2px 4px rgba(24, 21, 21, 0.5);
   overflow: hidden; /* Ukryj wszystko, co wychodzi poza nagłówek */
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), 
+    background: linear-gradient(to right, rgb(14, 197, 142), rgba(0, 0, 0, 0.2)), 
               url('https://cdnb.artstation.com/p/assets/images/images/033/436/413/large/monika-andruszkiewicz-banner-2k.jpg?1609606518');
-  background-size: 40%; /* Dopasowuje obrazek do wielkości kontenera */
+  background-size: 550px; /* Dopasowuje obrazek do wielkości kontenera */
   background-position: right; /* Umiejscowienie obrazu po prawej stronie */
   background-repeat: no-repeat; /* Nie powtarzaj tła */
   
