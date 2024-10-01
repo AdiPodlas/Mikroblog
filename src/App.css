@@ -1,55 +1,52 @@
-
-body{
+body {
   background-color: #FBFBFB;
 }
 
-
 .app-header {
-  background-color: #00736C ;
-  height: 133px;  /*  wysokość boxa, poniżej line height da nam teks po środku */
-  line-height: 133px;
+  position: relative; /* Umożliwia umiejscowienie elementów w stosunku do nagłówka */
+  height: 133px; /* Wysokość nagłówka */
   color: white;
-  padding: 10px 20px;
-  text-align: left;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-size: 30px;
   font-style: italic;
-  /* border-radius: 20px;           --- Zaokrglenia*/
   text-shadow: 2px 2px 4px rgba(24, 21, 21, 0.5);
-    /* overflow: auto;    - jak jest za dużo tekstu w danym elemencie tworzy scrol bar */
+  overflow: hidden; /* Ukryj wszystko, co wychodzi poza nagłówek */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), 
+              url('https://cdnb.artstation.com/p/assets/images/images/033/436/413/large/monika-andruszkiewicz-banner-2k.jpg?1609606518');
+  background-size: 40%; /* Dopasowuje obrazek do wielkości kontenera */
+  background-position: right; /* Umiejscowienie obrazu po prawej stronie */
+  background-repeat: no-repeat; /* Nie powtarzaj tła */
+  
 }
 
+.header-content {
+  position: left; /* Umiejscowienie treści w nagłówku */
+  padding: 10px 20px;
+  line-height: 133px; /* Wyśrodkowanie treści w pionie */
+  background: rgba(0, 0, 0, 0.5); /* Gradient jako tło treści */
+  width: 100%; /* Szerokość na całą szerokość nagłówka */
+ 
+}
+
+/* Gradient nad obrazkiem */
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 115, 108, 0.7), rgba(0, 115, 108, 0.5)); /* Gradient */
+  z-index: -1; /* Umieszczamy gradient nad obrazkiem, ale pod tekstem */
+}
 
 
 .content {
   background-color: white;
   padding: 20px;
-  min-height: 500px;  /* min-height - minimalna wysokość, przydatne w content jak się pojawiają nowewpisy */
+  min-height: 500px; /* Minimalna wysokość dla zawartości */
   width: 970px;
   border: 1px solid #C5C5C5;
-
-}
-/*.content:hover {
-  transform: scale(1.02); /* Powiększenie po najechaniu * /
-} */
-
-.first {
-  
-    background: linear-gradient(45deg, #041eb5, #3d9ab6);
-    min-height: 20vh;
-    align-items: left;
-    justify-content: left;
-    font-size: calc(10px + 4vmin);
-    color: #de0a0a;
-    padding: 10px 20px;
-    text-align: left;
-    box-shadow: 10px 8px 8px -8px #ec0a0a;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 30px;
-    font-style: italic;
-    border-radius: 10px;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
-
 }
 
 /* Stylizacja nawigacji */
@@ -86,6 +83,37 @@ body{
   border-radius: 5px; /* Zaokrąglenie rogów */
   border-color: #162c16; /* Dodanie koloru obwódki */
 }
+
+/* Przycisk czatu w prawym dolnym rogu */
+.chat-button {
+  position: fixed; /* Zawsze w tym samym miejscu, niezależnie od scrolla */
+  bottom: 20px; /* Odstęp od dołu ekranu */
+  right: 20px; /* Odstęp od prawej krawędzi ekranu */
+  width: 60px; /* Szerokość przycisku */
+  height: 60px; /* Wysokość przycisku */
+  background-color: #00736C; /* Kolor przycisku */
+  color: white; /* Kolor ikony */
+  border: none; /* Brak obramowania */
+  border-radius: 50%; /* Okrągły kształt */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Dodanie cienia */
+  display: flex; /* Centrowanie ikony */
+  justify-content: center; /* Wycentrowanie w poziomie */
+  align-items: center; /* Wycentrowanie w pionie */
+  font-size: 24px; /* Rozmiar ikony */
+  cursor: pointer; /* Zmiana kursora na "rękę" */
+  z-index: 1000; /* Ustawienie wyższego indeksu, aby przycisk był nad innymi elementami */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Animacje */
+}
+
+.chat-button:hover {
+  background-color: #005f55; /* Ciemniejszy kolor po najechaniu */
+  transform: scale(1.1); /* Powiększenie po najechaniu */
+}
+
+.chat-icon {
+  font-size: 28px; /* Rozmiar ikony czatu */
+}
+
 
 
 
