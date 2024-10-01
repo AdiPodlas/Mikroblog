@@ -2,6 +2,7 @@ import React from 'react';
 import './BlogEntry.css';
 import { Avatar } from './Avatar';
 import { Likes } from './Likes';
+import { Link } from 'react-router-dom'; // Importujemy Link
 
 export const BlogEntry = ({ title, entry }) => {
     return (
@@ -16,8 +17,11 @@ export const BlogEntry = ({ title, entry }) => {
                     <p className="text-content">
                         {entry.text}
                     </p>
-                    <div className="date"> {entry.date} </div>
-                    
+                    <div className="date">
+                        <Link to={`/entry/${entry.id}`} className="date-link"> {/* Dodajemy link do daty */}
+                            {entry.date}
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

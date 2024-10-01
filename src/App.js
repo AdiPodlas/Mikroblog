@@ -3,11 +3,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import MainPage from "./MainPage";
 import AboutPage from "./AboutPage";
 import SearchPage from "./SearchPage";
+import EntryPage from "./EntryPage"; // Importuj nowy komponent
 import React from "react";
 import SearchInput from "./SearchInput";
 
 function App() {
-
   return (
     <div>
       <div className="app-header">Podróże kulinarne</div>
@@ -21,8 +21,8 @@ function App() {
             <li>
               <Link className="nav-link" to="/about">O nas</Link>
             </li>
-            <li className="search-container"> {/* Dodanie kontenera dla SearchInput */}
-              <SearchInput />
+            <li>
+              <SearchInput/>
             </li>
           </ul>
         </nav>
@@ -32,6 +32,7 @@ function App() {
             <Route index element={<MainPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="search" element={<SearchPage />} />
+            <Route path="entry/:id" element={<EntryPage />} /> {/* Nowa trasa z dynamicznym ID */}
           </Routes>
         </div>
       </BrowserRouter>

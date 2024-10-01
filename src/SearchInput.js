@@ -20,6 +20,7 @@ function SearchInput() {
     e.preventDefault();
     if (searchTerm.trim() !== "") {
       navigate(`/search?q=${searchTerm}`);
+      setSearchTerm(""); // Ustawienie tekstu na pusty po wyszukaniu
     }
   };
 
@@ -37,8 +38,7 @@ function SearchInput() {
         className={`search-button ${isButtonActive ? 'active' : ''}`} 
         disabled={!isButtonActive}
       >
-        Szukaj
-      </button>
+        🔍      </button>
     </form>
   );
 }
