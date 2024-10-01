@@ -18,7 +18,7 @@ export const BlogEntry = ({ title, entry }) => {
                         {entry.text}
                     </p>
                     <div className="date">
-                        <Link to={`/entry/${entry.id}`} className="date-link"> {/* Dodajemy link do daty */}
+                        <Link to={`/entry/${entry.id}`} className="date-link"> 
                             {entry.date}
                         </Link>
                     </div>

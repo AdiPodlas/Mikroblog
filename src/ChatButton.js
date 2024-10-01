@@ -1,4 +1,5 @@
 import {useNavigate} from "react-router-dom";
+import { FaRocketchat } from "react-icons/fa";
 
 export function ChatButton() {
 
@@ -12,7 +13,7 @@ export function ChatButton() {
 
   return (
     <button className="chat-button" onClick={handleChat}>
-      <i className="chat-icon">🗨</i>
+      <FaRocketchat />
     </button>
   );
 }
