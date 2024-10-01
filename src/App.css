@@ -11,9 +11,9 @@ body {
   font-style: italic;
   text-shadow: 2px 2px 4px rgba(24, 21, 21, 0.5);
   overflow: hidden; /* Ukryj wszystko, co wychodzi poza nagłówek */
-    background: linear-gradient(to right, rgb(14, 197, 142), rgba(0, 0, 0, 0.2)), 
+    background: linear-gradient(90deg, rgba(0,115,108,1) 1%, rgba(0,115,108,1) 8%, rgba(0,115,108,0) 44%), 
               url('https://cdnb.artstation.com/p/assets/images/images/033/436/413/large/monika-andruszkiewicz-banner-2k.jpg?1609606518');
-  background-size: 550px; /* Dopasowuje obrazek do wielkości kontenera */
+  background-size: 650px; /* Dopasowuje obrazek do wielkości kontenera */
   background-position: right; /* Umiejscowienie obrazu po prawej stronie */
   background-repeat: no-repeat; /* Nie powtarzaj tła */
   
@@ -23,7 +23,7 @@ body {
   position: left; /* Umiejscowienie treści w nagłówku */
   padding: 10px 20px;
   line-height: 133px; /* Wyśrodkowanie treści w pionie */
-  background: rgba(0, 0, 0, 0.5); /* Gradient jako tło treści */
+
   width: 100%; /* Szerokość na całą szerokość nagłówka */
  
 }
@@ -36,7 +36,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, rgba(0, 115, 108, 0.7), rgba(0, 115, 108, 0.5)); /* Gradient */
+  background: #00736C;
   z-index: -1; /* Umieszczamy gradient nad obrazkiem, ale pod tekstem */
 }
 
