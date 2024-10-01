@@ -1,23 +1,43 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function SearchInput() {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const [isButtonActive, setIsButtonActive] = useState(false); // Stan aktywności przycisku
+
+  // Sprawdzanie czy wprowadzono tekst, aby aktywować przycisk
+  useEffect(() => {
+    if (searchTerm.trim() !== "") {
+      setIsButtonActive(true);
+    } else {
+      setIsButtonActive(false);
+    }
+  }, [searchTerm]);
 
   const handleSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?q=${searchTerm}`);
+    if (searchTerm.trim() !== "") {
+      navigate(`/search?q=${searchTerm}`);
+    }
   };
+
   return (
-    <form onSubmit={handleSearch}>
+    <form className="search-form" onSubmit={handleSearch}>
       <input
         type="text"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
+        className="search-input"
         placeholder="Wyszukaj..."
       />
-      <button type="submit">Szukaj</button>
+      <button 
+        type="submit" 
+        className={`search-button ${isButtonActive ? 'active' : ''}`} 
+        disabled={!isButtonActive}
+      >
+        Szukaj
+      </button>
     </form>
   );
 }

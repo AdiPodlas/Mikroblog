@@ -21,8 +21,8 @@ function App() {
             <li>
               <Link className="nav-link" to="/about">O nas</Link>
             </li>
-            <li>
-             <SearchInput/>
+            <li className="search-container"> {/* Dodanie kontenera dla SearchInput */}
+              <SearchInput />
             </li>
           </ul>
         </nav>
@@ -40,3 +40,4 @@ function App() {
 }
 
 export default App;
+
