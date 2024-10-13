@@ -8,6 +8,7 @@ import React from "react";
 import SearchInput from "./SearchInput";
 import ChatPage from "./ChatPage";
 import { ChatButton } from "./ChatButton";
+import PopularWordsPage from "./PopularWordsPage";
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
               <Link className="nav-link" to="/about">O nas</Link>
             </li>
             <li>
+            <Link className="nav-link" to="/popular-words">Popularne słowa</Link>
+            </li>
+            <li>
               <SearchInput />
             </li>
           </ul>
@@ -39,6 +43,7 @@ function App() {
             <Route path="search" element={<SearchPage />} />
             <Route path="entry/:id" element={<EntryPage />} /> 
             <Route path="chat" element={<ChatPage />} />
+            <Route path="popular-words" element={<PopularWordsPage />} />
           </Routes>
         </div>
           
