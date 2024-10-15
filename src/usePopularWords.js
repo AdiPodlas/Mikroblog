@@ -11,12 +11,12 @@ export const usePopularWords = () => {
     const lowerCaseSingle = singleText.toLowerCase();
     const separateWords = lowerCaseSingle.split(/[ ,.\n]+/);  //Ustalamy separator do wyciągnięcia pojedyńczych słów, w tym przypadku podzieli nam tekst po " spacji . , \n(nowa linijka) + na końcu nam mówi, że mogą występować obok siebie jako jeden separator, żeby nam nie zrobił kilku sparatorów czy coś"
     console.log ("separate", separateWords)
-    
+
 
     
 
    
    
-    return         ["Słówka"]
+    return separateWords
     
 }
