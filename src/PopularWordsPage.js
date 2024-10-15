@@ -1,9 +1,11 @@
 import React from "react";
 import Chip from "./Chip"; 
 import "./PopularWordsPage.css"; 
+import { usePopularWords } from "./usePopularWords";
 
 function PopularWordsPage() {
-  const popularWords = ["Pizza", "Sushi", "Pasta", "Burger", "Tacos"];
+  const popularWords = usePopularWords();
+ // const popularWords = ["🏚 Pizza", "Sushi", "Pasta", "Burger", "Tacos"];
   const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"]; // Tablica kolorów
 
   const handleChipClick = (word) => {
