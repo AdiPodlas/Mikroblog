@@ -1,5 +1,5 @@
 import React from "react";
-import "./Chip.css"; // Dodajmy stylizację, która zostanie nadpisana dynamicznie
+import "./Chip.css"; 
 
 function Chip({ label, color, onClick }) {
   return (

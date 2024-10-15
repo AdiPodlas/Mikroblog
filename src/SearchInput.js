@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./SearchInput.css";
+import { BiSolidSearchAlt2 } from "react-icons/bi";
 
 function SearchInput() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -38,7 +39,7 @@ function SearchInput() {
         className={`search-button ${isButtonActive ? 'active' : ''}`} 
         disabled={!isButtonActive}
       >
-        🔍      </button>
+        <BiSolidSearchAlt2 />      </button>
     </form>
   );
 }
