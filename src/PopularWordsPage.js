@@ -5,7 +5,6 @@ import { usePopularWords } from "./usePopularWords";
 
 function PopularWordsPage() {
   const popularWords = usePopularWords();
- // const popularWords = ["🏚 Pizza", "Sushi", "Pasta", "Burger", "Tacos"];
   const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#FF33A6"]; // Tablica kolorów
 
   const handleChipClick = (word) => {
@@ -16,12 +15,12 @@ function PopularWordsPage() {
     <div className="popular-words-page">
       <h2>Popularne słowa</h2>
       <div className="chip-container">
-        {popularWords.map((word, index) => (
+        {popularWords.map(({ word }, index) => (
           <Chip
             key={index}
             label={word}
             color={colors[index % colors.length]} // Przypisywanie kolorów cyklicznie
-            onClick={handleChipClick}
+            onClick={() => handleChipClick(word)} // Użycie funkcji z odpowiednim argumentem
           />
         ))}
       </div>
