@@ -11,9 +11,9 @@ function SearchPage() {
   return (
     <div>
       <h1>Wyniki wyszukiwania:</h1>
-      <p>{searchEntries.map((entry) => (
+      <div>{searchEntries.map((entry) => (
         <BlogEntry key={entry.id} title={entry.title} entry={entry} />
-      ))}</p>
+      ))}</div>
     </div>
   );
 }
