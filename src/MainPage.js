@@ -5,7 +5,6 @@ import { useEntries } from "./useEntries";
 import { PaginationControls } from "./PaginationControls";
 import PopularWordsPreview from "./PopularWordsPreview";
 
-
 function MainPage() {
   const [pageNumber, setPageNumber] = useState(0);
   const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber);
@@ -24,10 +23,11 @@ function MainPage() {
         />
       </div>
 
-      
+      {/* Dodajemy komponent PopularWordsPreview po prawej stronie */}
+      <div className="sidebar">
+        <PopularWordsPreview />
+      </div>
     </div>
-
-    
   );
 }
 
