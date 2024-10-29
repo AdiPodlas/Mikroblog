@@ -8,7 +8,7 @@ function Chip({ label, color, onClick, count }) {
       style={{ backgroundColor: color }} // Ustawiamy kolor dynamicznie
       onClick={() => onClick(label)}
     >
-      {label} {count}
+      {label} | {count}
     </button>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { usePopularWords } from "./usePopularWords";
 import Chip from "./Chip";
 import { useNavigate } from "react-router-dom";
+import "./PopularWordsPreview.css"
 
 function PopularWordsPreview() {
   const navigate = useNavigate();
@@ -23,14 +24,16 @@ function PopularWordsPreview() {
         {popularWords.map(({ word, count }, index) => (
           <Chip
             key={word}
-            label={`${word} | `}
+            label={word}
             count={count}
             color={colors[index % colors.length]}
             onClick={() => handleChipClick(word)}
           />
         ))}
+
+
       </div>
-      <button onClick={handleShowMoreClick}>Pokaż więcej</button>
+      <button className="show-more-button" onClick={handleShowMoreClick}>Pokaż więcej</button>
     </div>
   );
 }

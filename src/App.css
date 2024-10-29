@@ -1,22 +1,30 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #FBFBFB;
+  background-color: #fbfbfb;
 }
 
 .app-header {
   position: relative; /* Umożliwia umiejscowienie elementów w stosunku do nagłówka */
   height: 133px; /* Wysokość nagłówka */
   color: white;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 30px;
   font-style: italic;
   text-shadow: 2px 2px 4px rgba(24, 21, 21, 0.5);
   overflow: hidden; /* Ukryj wszystko, co wychodzi poza nagłówek */
-    background: linear-gradient(90deg, rgba(0,115,108,1) 1%, rgba(0,115,108,1) 8%, rgba(0,115,108,0) 44%), 
-              url('https://cdnb.artstation.com/p/assets/images/images/033/436/413/large/monika-andruszkiewicz-banner-2k.jpg?1609606518');
+  background: linear-gradient(
+      90deg,
+      rgba(0, 115, 108, 1) 1%,
+      rgba(0, 115, 108, 1) 8%,
+      rgba(0, 115, 108, 0) 44%
+    ),
+    url("https://cdnb.artstation.com/p/assets/images/images/033/436/413/large/monika-andruszkiewicz-banner-2k.jpg?1609606518");
   background-size: 650px; /* Dopasowuje obrazek do wielkości kontenera */
   background-position: right; /* Umiejscowienie obrazu po prawej stronie */
   background-repeat: no-repeat; /* Nie powtarzaj tła */
-  
 }
 
 .header-content {
@@ -25,28 +33,26 @@ body {
   line-height: 133px; /* Wyśrodkowanie treści w pionie */
 
   width: 100%; /* Szerokość na całą szerokość nagłówka */
- 
 }
 
 /* Gradient nad obrazkiem */
 .app-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #00736C;
+  background: #00736c;
   z-index: -1; /* Umieszczamy gradient nad obrazkiem, ale pod tekstem */
 }
 
-
 .content {
   background-color: white;
-  padding: 20px;
   min-height: 500px; /* Minimalna wysokość dla zawartości */
-  width: 970px;
-  border: 1px solid #C5C5C5;
+  width: 100%;
+  border: 1px solid #c5c5c5;
+  
 }
 
 /* Stylizacja nawigacji */
@@ -78,7 +84,7 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #00736C; /* Zmiana koloru tła po najechaniu */
+  background-color: #00736c; /* Zmiana koloru tła po najechaniu */
   color: #fff; /* Zmiana koloru tekstu po najechaniu */
   border-radius: 5px; /* Zaokrąglenie rogów */
   border-color: #162c16; /* Dodanie koloru obwódki */
@@ -91,7 +97,7 @@ body {
   right: 20px; /* Odstęp od prawej krawędzi ekranu */
   width: 60px; /* Szerokość przycisku */
   height: 60px; /* Wysokość przycisku */
-  background-color: #00736C; /* Kolor przycisku */
+  background-color: #00736c; /* Kolor przycisku */
   color: white; /* Kolor ikony */
   border: none; /* Brak obramowania */
   border-radius: 50%; /* Okrągły kształt */
@@ -127,47 +133,7 @@ body {
 .sidebar {
   flex: 1; /* Sidebar zajmuje 1/4 miejsca */
   padding: 20px; /* Odstęp wewnętrzny */
-  border-left: 1px solid #C5C5C5; /* Opcjonalna linia oddzielająca */
+  border-left: 1px solid #c5c5c5; /* Opcjonalna linia oddzielająca */
   background-color: #f8f8f8; /* Tło dla sidebaru */
   max-width: 300px; /* Możesz ustawić maksymalną szerokość sidebaru */
 }
-
-/* Stylizacja dla komponentu PopularWordsPreview */
-.popular-words-preview {
-  padding: 10px;
-  background-color: #f4f4f9;
-  border-radius: 8px;
-}
-
-.popular-words-preview h3 {
-  font-size: 18px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.popular-words-preview .chip-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.popular-words-preview button {
-  margin-top: 15px;
-  padding: 8px 12px;
-  font-size: 14px;
-  background-color: #00736C;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.popular-words-preview button:hover {
-  background-color: #005f55;
-}
-
-
-
-
-

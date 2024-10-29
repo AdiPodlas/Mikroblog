@@ -21,7 +21,7 @@ function PopularWordsPage() {
         {popularWords.map(({ word, count }, index) => (
           <Chip
             key={word}
-            label={`${word} | `} 
+            label={word} 
             count={count}
             color={colors[index % colors.length]} // Przypisywanie kolorów cyklicznie
             onClick={() => handleChipClick(word)} // Użycie funkcji z odpowiednim argumentem
