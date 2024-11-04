@@ -7,15 +7,43 @@ import PopularWordsPreview from "./PopularWordsPreview";
 
 function MainPage() {
   const [pageNumber, setPageNumber] = useState(0);
+  const [sortBy, setSortBy] = useState("like"); // Domyślnie sortowanie po liczbie polubień
   const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber);
+
+  // Funkcja zmieniająca kryterium sortowania
+  const handleSortChange = (event) => {
+    setSortBy(event.target.value);
+  };
+
+  // Sortujemy wpisy na podstawie wybranego kryterium sortowania
+  const sortedEntries = [...currentPageEntries].sort((a, b) => {
+    if (sortBy === "like") {
+      return b.likes - a.likes; // Sortowanie malejąco po liczbie polubień
+    } else if (sortBy === "date") {
+      return new Date(b.date) - new Date(a.date); // Sortowanie malejąco po dacie
+    }
+    return 0;
+  });
 
   return (
     <div className="main-page">
       <div className="main-content">
         <NewEntryForm onAddEntry={handleAddEntry} />
-        {currentPageEntries.map((entry) => (
+
+        {/* Dropdown do wyboru sortowania */}
+        <div className="sort-dropdown">
+          <label htmlFor="sort-by">Sortuj po: </label>
+          <select id="sort-by" value={sortBy} onChange={handleSortChange}>
+            <option value="like">Polubienia</option>
+            <option value="date">Data</option>
+          </select>
+        </div>
+
+        {/* Lista posortowanych wpisów */}
+        {sortedEntries.map((entry) => (
           <BlogEntry key={entry.id} title={entry.title} entry={entry} />
         ))}
+
         <PaginationControls
           pageNumber={pageNumber}
           setPageNumber={setPageNumber}
@@ -23,7 +51,7 @@ function MainPage() {
         />
       </div>
 
-      {/* Dodajemy komponent PopularWordsPreview po prawej stronie */}
+      {/* Komponent PopularWordsPreview po prawej stronie */}
       <div className="sidebar">
         <PopularWordsPreview />
       </div>
