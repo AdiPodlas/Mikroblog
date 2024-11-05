@@ -4,27 +4,18 @@ import { NewEntryForm } from "./NewEntryForm";
 import { useEntries } from "./useEntries";
 import { PaginationControls } from "./PaginationControls";
 import PopularWordsPreview from "./PopularWordsPreview";
-import moment from "moment";
+
 
 function MainPage() {
   const [pageNumber, setPageNumber] = useState(0);
-  const [sortBy, setSortBy] = useState("like"); // Domyślnie sortowanie po liczbie polubień
-  const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber);
+  const [sortBy, setSortBy] = useState("default"); // Domyślnie sortowanie po liczbie polubień
+  const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber, sortBy);
 
   // Funkcja zmieniająca kryterium sortowania
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
   };
 
-  // Sortujemy wpisy na podstawie wybranego kryterium sortowania
-  const sortedEntries = [...currentPageEntries].sort((a, b) => {
-    if (sortBy === "like") {
-      return b.likes - a.likes; // Sortowanie malejąco po liczbie polubień
-    } else if (sortBy === "date") {
-      return moment(b.date, 'DD-MM-YYYY') - moment (a.date, 'DD-MM-YYYY'); // Sortowanie malejąco po dacie
-    }
-    return 0;
-  });
 
   return (
     <div className="main-page">
@@ -35,13 +26,14 @@ function MainPage() {
         <div className="sort-dropdown">
           <label htmlFor="sort-by">Sortuj po: </label>
           <select id="sort-by" value={sortBy} onChange={handleSortChange}>
+          <option value="default">Domyślnie</option>
             <option value="like">Polubienia</option>
             <option value="date">Data</option>
           </select>
         </div>
 
         {/* Lista posortowanych wpisów */}
-        {sortedEntries.map((entry) => (
+        {currentPageEntries.map((entry) => (
           <BlogEntry key={entry.id} title={entry.title} entry={entry} />
         ))}
 
