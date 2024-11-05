@@ -4,6 +4,7 @@ import { NewEntryForm } from "./NewEntryForm";
 import { useEntries } from "./useEntries";
 import { PaginationControls } from "./PaginationControls";
 import PopularWordsPreview from "./PopularWordsPreview";
+import moment from "moment";
 
 function MainPage() {
   const [pageNumber, setPageNumber] = useState(0);
@@ -20,7 +21,7 @@ function MainPage() {
     if (sortBy === "like") {
       return b.likes - a.likes; // Sortowanie malejąco po liczbie polubień
     } else if (sortBy === "date") {
-      return new Date(b.date) - new Date(a.date); // Sortowanie malejąco po dacie
+      return moment(b.date, 'DD-MM-YYYY') - moment (a.date, 'DD-MM-YYYY'); // Sortowanie malejąco po dacie
     }
     return 0;
   });

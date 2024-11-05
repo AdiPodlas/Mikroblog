@@ -10,7 +10,7 @@ export const getEntries = () => {
       Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, 
       nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. 
       Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.`,
-      date: "16-07-2024",
+      date: "16-02-2024",
       likes: 6
     },
     {
@@ -20,7 +20,7 @@ export const getEntries = () => {
          malesuada orci porta feugiat. Phasellus nisi mi, mattis volutpat augue non, gravida fringilla ante. Proin pretium accumsan blandit.
           Nulla facilisi. Ut molestie porttitor purus, vitae iaculis diam scelerisque eu. 
         In feugiat tortor et mauris eleifend malesuada. Nullam rutrum libero quis pretium efficitur.`,
-        date: "18-03-2024",
+        date: "18-07-2024",
         likes: 8
       },
 
@@ -32,7 +32,7 @@ export const getEntries = () => {
 Morbi fermentum volutpat mauris, tempus rhoncus nibh bibendum eu. Praesent ut enim et magna venenatis semper. Ut placerat varius bibendum. Etiam vel sollicitudin risus, et varius magna. Maecenas ut mi luctus, fermentum nunc at, placerat ex. Maecenas id ante rhoncus, commodo massa non, convallis urna. Curabitur auctor erat in laoreet sollicitudin.
 
 Maecenas eleifend, elit sed lobortis elementum, massa arcu elementum sapien, at maximus ipsum tellus eu quam. Nunc sed velit at mi maximus accumsan. Donec accumsan metus pulvinar dictum pellentesque. Proin vel leo id justo convallis pellentesque. Proin finibus neque sed odio fringilla, sed tristique magna scelerisque. In vel leo purus. Ut erat ex, tincidunt eu faucibus non, facilisis eu lorem. Vestibulum lacinia nunc ac placerat ullamcorper. Etiam luctus ornare aliquet. Pellentesque a pharetra felis. Nulla facilisi.`,
-        date: "18-03-2024",
+        date: "18-09-2024",
         likes: 66
       
       },
@@ -44,7 +44,7 @@ Maecenas eleifend, elit sed lobortis elementum, massa arcu elementum sapien, at 
         Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, 
         nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. 
         Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.`,
-        date: "16-07-2024",
+        date: "16-11-2024",
         likes: 6
       },
       {

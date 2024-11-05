@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getEntries } from "./EntryRepository";
+import moment from "moment";
 
 export const useEntries = (pageNumber) => {
   const [entries, setEntries] = useState(getEntries());
@@ -12,7 +13,7 @@ export const useEntries = (pageNumber) => {
       id: entries.length + 1,
       author: author,
       text: text,
-      date: new Date().toLocaleDateString(),
+      date: moment ().format('DD-MM-YYYY'),
       likes: 0,
     };
     setEntries([newEntry, ...entries]);

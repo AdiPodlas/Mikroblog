@@ -1,4 +1,3 @@
-// PopularWordsList.js
 import React from "react";
 import Chip from "./Chip"; 
 import { usePopularWords } from "./usePopularWords";
