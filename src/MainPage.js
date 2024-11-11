@@ -5,17 +5,16 @@ import { useEntries } from "./useEntries";
 import { PaginationControls } from "./PaginationControls";
 import PopularWordsPreview from "./PopularWordsPreview";
 
-
 function MainPage() {
   const [pageNumber, setPageNumber] = useState(0);
   const [sortBy, setSortBy] = useState("default"); // Domyślnie sortowanie po liczbie polubień
   const { currentPageEntries, handleAddEntry, totalPages } = useEntries(pageNumber, sortBy);
 
-  // Funkcja zmieniająca kryterium sortowania
+  // Funkcja zmieniająca kryterium sortowania i ustawiająca stronę na pierwszą
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
+    setPageNumber(0); // Resetujemy numer strony do 0
   };
-
 
   return (
     <div className="main-page">
@@ -26,9 +25,11 @@ function MainPage() {
         <div className="sort-dropdown">
           <label htmlFor="sort-by">Sortuj po: </label>
           <select id="sort-by" value={sortBy} onChange={handleSortChange}>
-          <option value="default">Domyślnie</option>
-            <option value="like">Polubienia</option>
-            <option value="date">Data</option>
+            <option value="default">Domyślnie</option>
+            <option value="like-desc">Polubienia (malejąco)</option>
+            <option value="like-asc">Polubienia (rosnąco)</option>
+            <option value="date-desc">Data (najnowsze)</option>
+            <option value="date-asc">Data (najstarsze)</option>
           </select>
         </div>
 

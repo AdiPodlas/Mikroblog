@@ -19,14 +19,17 @@ export const useEntries = (pageNumber, sortBy) => {
     setEntries([newEntry, ...entries]);
   };
   const compareEntries = (a, b) => {
-    if (sortBy === "like") {
-      return b.likes - a.likes; // Sortowanie malejąco po liczbie polubień
-    } else if (sortBy === "date") {
-      return moment(b.date, "DD-MM-YYYY") - moment(a.date, "DD-MM-YYYY"); // Sortowanie malejąco po dacie
+    if (sortBy === "like-desc") {
+      return b.likes - a.likes;
+    } else if (sortBy === "like-asc") {
+      return a.likes - b.likes;
+    } else if (sortBy === "date-desc") {
+      return moment(b.date, "DD-MM-YYYY") - moment(a.date, "DD-MM-YYYY");
+    } else if (sortBy === "date-asc") {
+      return moment(a.date, "DD-MM-YYYY") - moment(b.date, "DD-MM-YYYY");
     }
     return 0;
   };
-
   return {
     currentPageEntries: [...entries]
       .sort(compareEntries)
