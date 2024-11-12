@@ -1,7 +1,7 @@
 const x = 17
 
 export const getEntries = () => {
-  return [
+  const result =  [
     {
       id: 1,
       author: "Adrian",                                          
@@ -139,4 +139,6 @@ Maecenas eleifend, elit sed lobortis elementum, massa arcu elementum sapien, at 
             
             },
   ];
+  console.log({body: JSON.stringify(result)})
+  return result;
 };
