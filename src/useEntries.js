@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getEntries } from "./EntryRepository";
 import moment from "moment";
+import { Await } from "react-router-dom";
 
 export const useEntries = (pageNumber, sortBy) => {
-  const [entries, setEntries] = useState(getEntries());
+  const [entries, setEntries] = useState([]);
+
+  
+   const  fetchEntries = async() => {
+    const response = await fetch("http://localhost:8080/entries")
+    const responseBody = await response.json()
+    setEntries (responseBody)
+   }
+   
+   useEffect(() => {
+    fetchEntries()
+   }, [])
+
+
 
   const entriesPerPage = 5;
   const totalPages = Math.ceil(entries.length / entriesPerPage);

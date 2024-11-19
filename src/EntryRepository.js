@@ -139,6 +139,6 @@ Maecenas eleifend, elit sed lobortis elementum, massa arcu elementum sapien, at 
             
             },
   ];
-  console.log({body: JSON.stringify(result)})
+ 
   return result;
 };
