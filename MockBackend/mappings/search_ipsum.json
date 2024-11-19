@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "urlPath": "/search",
+      "queryParameters": {
+        "q": {
+          "equalTo": "ipsum"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": "[]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  

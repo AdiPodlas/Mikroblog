@@ -1,0 +1,19 @@
+{
+    "request": {
+      "method": "GET",
+      "urlPath": "/search",
+      "queryParameters": {
+        "q": {
+          "equalTo": "lorem"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "body": "[{\"id\":1,\"author\":\"Adrian\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit.\",\"date\":\"16-02-2024\",\"likes\":6},{\"id\":2,\"author\":\"Martyna\",\"text\":\"Lorem ipsum dolor sit amet, facilisis nec bibendum vel.\",\"date\":\"18-07-2024\",\"likes\":8},{\"id\":3,\"author\":\"Martyna\",\"text\":\"Lorem ipsum dolor sit amet, maximus non neque efficitur.\",\"date\":\"18-09-2024\",\"likes\":66}]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+  
