@@ -1,18 +1,25 @@
 {
-  "id": "4f8a32b0-d89c-489b-9278-efcd00328e4b",
-  "name": "search",
+  
   "request": {
-    "url": "/search",
-    "method": "GET"
+    "urlPath": "/search",
+    "method": "GET",
+    "queryParameters": {
+        "q": {
+          "matches": ".*"
+        }
+      }
+
+
   },
   "response": {
     "status": 200,
     "body": "[{\"id\":1,\"author\":\"Adrian\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.\",\"date\":\"16-02-2024\",\"likes\":6},{\"id\":2,\"author\":\"Martyna\",\"text\":\"Morbi sem lectus, facilisis nec bibendum vel, vestibulum non urna. Integer id iaculis magna. Nullam ultricies turpis malesuada orci porta feugiat. Phasellus nisi mi, mattis volutpat augue non, gravida fringilla ante. Proin pretium accumsan blandit. Nulla facilisi. Ut molestie porttitor purus, vitae iaculis diam scelerisque eu. In feugiat tortor et mauris eleifend malesuada. Nullam rutrum libero quis pretium efficitur.\",\"date\":\"18-07-2024\",\"likes\":8},{\"id\":3,\"author\":\"Martyna\",\"text\":\"Vestibulum viverra, mauris nec molestie gravida, odio mi lobortis enim, nec sodales sem quam non arcu. Phasellus maximus non neque efficitur fringilla. Sed interdum metus eget leo interdum ultrices. Quisque ut enim et mauris dapibus congue non quis massa. Donec nec tortor arcu. Etiam massa orci, consequat in dapibus vel, faucibus vitae diam. Donec sit amet neque efficitur, convallis metus vitae, molestie ex.\",\"date\":\"18-09-2024\",\"likes\":66},{\"id\":4,\"author\":\"Adrian\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.\",\"date\":\"16-11-2024\",\"likes\":6},{\"id\":5,\"author\":\"Martyna\",\"text\":\"Morbi sem lectus, facilisis nec bibendum vel, vestibulum non urna. Integer id iaculis magna. Nullam ultricies turpis malesuada orci porta feugiat. Phasellus nisi mi, mattis volutpat augue non, gravida fringilla ante. Proin pretium accumsan blandit. Nulla facilisi. Ut molestie porttitor purus, vitae iaculis diam scelerisque eu. In feugiat tortor et mauris eleifend malesuada. Nullam rutrum libero quis pretium efficitur.\",\"date\":\"18-03-2024\",\"likes\":8},{\"id\":6,\"author\":\"Martyna\",\"text\":\"Vestibulum viverra, mauris nec molestie gravida, odio mi lobortis enim, nec sodales sem quam non arcu. Phasellus maximus non neque efficitur fringilla. Sed interdum metus eget leo interdum ultrices. Quisque ut enim et mauris dapibus congue non quis massa. Donec nec tortor arcu. Etiam massa orci, consequat in dapibus vel, faucibus vitae diam. Donec sit amet neque efficitur, convallis metus vitae, molestie ex.\",\"date\":\"18-03-2024\",\"likes\":66},{\"id\":7,\"author\":\"Adrian\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.\",\"date\":\"16-07-2024\",\"likes\":6},{\"id\":8,\"author\":\"Martyna\",\"text\":\"Morbi sem lectus, facilisis nec bibendum vel, vestibulum non urna. Integer id iaculis magna. Nullam ultricies turpis malesuada orci porta feugiat. Phasellus nisi mi, mattis volutpat augue non, gravida fringilla ante. Proin pretium accumsan blandit. Nulla facilisi. Ut molestie porttitor purus, vitae iaculis diam scelerisque eu. In feugiat tortor et mauris eleifend malesuada. Nullam rutrum libero quis pretium efficitur.\",\"date\":\"18-03-2024\",\"likes\":8},{\"id\":9,\"author\":\"Martyna\",\"text\":\"Vestibulum viverra, mauris nec molestie gravida, odio mi lobortis enim, nec sodales sem quam non arcu. Phasellus maximus non neque efficitur fringilla. Sed interdum metus eget leo interdum ultrices. Quisque ut enim et mauris dapibus congue non quis massa. Donec nec tortor arcu. Etiam massa orci, consequat in dapibus vel, faucibus vitae diam. Donec sit amet neque efficitur, convallis metus vitae, molestie ex.\",\"date\":\"18-03-2024\",\"likes\":66},{\"id\":10,\"author\":\"Adrian\",\"text\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut faucibus ullamcorper imperdiet. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi vitae congue magna. Nullam dignissim quam non sem ultrices pretium eget ut lorem. Nullam pretium accumsan quam, a finibus metus luctus in. Fusce sit amet neque eu mi varius finibus.\",\"date\":\"16-07-2024\",\"likes\":6}]",
     "headers": {
-      "content-type": "application/json"
+      "content-type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "*",
+      "Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding"
     }
-  },
-  "uuid": "4f8a32b0-d89c-489b-9278-efcd00328e4b",
-  "persistent": true,
-  "insertionIndex": 5
+  }
+  
 }
