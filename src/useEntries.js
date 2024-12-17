@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { getEntries } from "./EntryRepository";
 import moment from "moment";
-import { Await } from "react-router-dom";
 
 export const useEntries = (pageNumber, sortBy) => {
   const [entries, setEntries] = useState([]);

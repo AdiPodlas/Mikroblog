@@ -7,7 +7,7 @@ const EntryPage = () => {
   const [entry, setEntry] = useState(null); // Stan dla konkretnego wpisu
   const [error, setError] = useState(null); // Stan dla błędów
 
-  useEffect(() => {
+ /* useEffect(() => {
     const entries = getEntries(); // Pobierz wszystkie wpisy
     const foundEntry = entries.find((entry) => entry.id === parseInt(id, 10)); // Znajdź wpis po ID
 
@@ -16,7 +16,17 @@ const EntryPage = () => {
     } else {
       setError('Nie ma takiego wpisu.'); // Ustaw komunikat o błędzie
     }
-  }, [id]);
+  }, [id]); */
+
+  const  fetchEntry = async() => {
+    const response = await fetch("http://localhost:8080/entry/" + id)
+    const responseBody = await response.json()
+    setEntry (responseBody)
+   }
+   
+   useEffect(() => {
+    fetchEntry()
+   }, [])
 
   if (error) {
     return <div>{error}</div>; // Wyświetl komunikat o błędzie
@@ -33,6 +43,7 @@ const EntryPage = () => {
       <p><strong>Autor:</strong> {entry.author}</p>
       <p><strong>Data:</strong> {entry.date}</p>
       <p><strong>Liczba polubień:</strong> {entry.likes}</p>
+      <p>{entry.id}</p>
     </div>
   );
 };
