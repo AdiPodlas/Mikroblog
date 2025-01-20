@@ -1,27 +1,36 @@
-import { getEntries } from "./EntryRepository";
-import _ from "lodash";
+import { useEffect, useState } from "react";
 
-export const usePopularWords = (maxWordCount) => {
-  const forbiddenWords = ["vel", "nec", "non"];
+export const usePopularWords = (count) => {
+  const [popularWords, setPopularWords] = useState([]); // Stan na popularne słowa
+  const [isLoading, setIsLoading] = useState(true); // Stan ładowania
+  const [error, setError] = useState(null); // Stan błędów
 
-  const entries = getEntries();
-  const texts = entries.map((entry) => entry.text);
-  const singleText = texts.join();
-  const lowerCaseSingle = singleText.toLowerCase();
-  const separateWords = lowerCaseSingle.split(/[ ,.\n]+/);
-  const longWords = separateWords.filter((word) => word.length > 2);
-  const allowedWords = longWords.filter(
-    (word) => !forbiddenWords.includes(word)
-  );
+  const fetchPopularWords = async () => {
+    setIsLoading(true);
+    setError(null); // Resetujemy błąd przed próbą pobrania
+    try {
+      const response = await fetch(`http://localhost:8080/popular-words?count=${count}`);
+      if (!response.ok) {
+        throw new Error(`Błąd podczas pobierania danych: ${response.statusText}`);
+      }
+      const responseBody = await response.json();
+      setPopularWords(responseBody);
+    } catch (error) {
+      console.error("Error fetching popular words:", error);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-  const wordCounts = _.countBy(allowedWords);
-  const sortedWords = _.orderBy(
-    Object.entries(wordCounts),
-    ([, count]) => count,
-    ["desc"]
-  );
+  useEffect(() => {
+    fetchPopularWords();
+  }, [count]); // Wysłanie zapytania, jeśli zmienia się liczba słów
 
-  return sortedWords
-    .slice(0, maxWordCount)
-    .map(([word, count]) => ({ word, count }));
+  return {
+    popularWords,
+    isLoading,
+    error,
+  };
 };
+

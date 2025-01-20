@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getEntries } from './EntryRepository'; // Zakładamy, że ta funkcja zwraca wszystkie wpisy
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getEntries } from "./EntryRepository"; // Zakładamy, że ta funkcja zwraca wszystkie wpisy
 
 const EntryPage = () => {
   const { id } = useParams(); // Pobranie ID z parametrów URL
   const [entry, setEntry] = useState(null); // Stan dla konkretnego wpisu
   const [error, setError] = useState(null); // Stan dla błędów
 
- /* useEffect(() => {
+  /* useEffect(() => {
     const entries = getEntries(); // Pobierz wszystkie wpisy
     const foundEntry = entries.find((entry) => entry.id === parseInt(id, 10)); // Znajdź wpis po ID
 
@@ -18,15 +18,23 @@ const EntryPage = () => {
     }
   }, [id]); */
 
-  const  fetchEntry = async() => {
-    const response = await fetch("http://localhost:8080/entry/" + id)
-    const responseBody = await response.json()
-    setEntry (responseBody)
-   }
-   
-   useEffect(() => {
-    fetchEntry()
-   }, [])
+  const fetchEntry = async () => {
+    try {
+      const response = await fetch("http://localhost:8080/entry/" + id);
+      if (response.status !== 200) {
+        setError("Nie ma takiego wpisu.");
+      } else {
+        const responseBody = await response.json();
+        setEntry(responseBody);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    fetchEntry();
+  }, []);
 
   if (error) {
     return <div>{error}</div>; // Wyświetl komunikat o błędzie
@@ -40,9 +48,15 @@ const EntryPage = () => {
     <div>
       <h2>{entry.title}</h2>
       <p>{entry.text}</p>
-      <p><strong>Autor:</strong> {entry.author}</p>
-      <p><strong>Data:</strong> {entry.date}</p>
-      <p><strong>Liczba polubień:</strong> {entry.likes}</p>
+      <p>
+        <strong>Autor:</strong> {entry.author}
+      </p>
+      <p>
+        <strong>Data:</strong> {entry.date}
+      </p>
+      <p>
+        <strong>Liczba polubień:</strong> {entry.likes}
+      </p>
       <p>{entry.id}</p>
     </div>
   );
